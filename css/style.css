@@ -1,0 +1,48 @@
+h1 {
+  font-size: 50px;
+  font-weight: 700;
+  color: rgb(13, 158, 158);
+}
+h1 span {
+  color: rgba(145, 145, 15, 0.781);
+}
+h4 {
+  font-size: 20px;
+  font-weight: 700;
+}
+h5 {
+  margin-right: 10px;
+  font-size: 17px;
+}
+input {
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  padding-left: 15px;
+  background-color: rgba(128, 128, 128, 0.246);
+  width: 100%;
+  height: 40px;
+}
+.btn-cal {
+  width: 200px;
+  height: 50px;
+  background-color: rgba(61, 159, 216, 0.863);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+}
+.btn-save {
+  width: 170px;
+  height: 45px;
+  background-color: rgba(61, 159, 216, 0.863);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+}
+.d-flex.align-items-center.save input {
+  width: 25%;
+}
