@@ -46,3 +46,13 @@ input {
 .d-flex.align-items-center.save input {
   width: 25%;
 }
+.warning {
+  font-size: 20px;
+  background-color: rgba(177, 14, 14, 0.705);
+  padding: 10px;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 7px;
+  margin-top: 20px;
+  display: none;
+}
