@@ -6,14 +6,18 @@ function inputAmmount(){
     const alert = document.getElementById('warning');
     const totalItem = parseFloat(foodInput) + parseFloat(rentInput) + parseFloat(clothInput);
     const totalBalance = parseFloat(totalInput) - totalItem;
+    const totalExpen =  document.getElementById('total-expen');
+    const balance = document.getElementById('balance');
     
     if(isNaN(totalInput) || isNaN(foodInput) || isNaN(rentInput) || isNaN(clothInput) || totalInput < 0 || foodInput < 0 || rentInput < 0 || clothInput < 0){
         alert.style.display = 'block';
+        totalExpen.innerText = '00';
+        balance .innerText = '00';
+        return alert;
     }
     else{
-        const totalExpen =  document.getElementById('total-expen');
+        
         totalExpen.innerText = totalItem;
-        let balance = document.getElementById('balance');
         balance.innerText = totalBalance;
         alert.style.display = 'none';
     }
@@ -23,11 +27,22 @@ function saveAmmount(){
     const saveInput = document.getElementById('save-input').value;
     const saveAmmount = (parseFloat(totalInput) * parseFloat(saveInput)) / 100;  
     const saveAmmountText = document.getElementById('save-ammount');
-    saveAmmountText.innerText = saveAmmount; 
+    const warning1 = document.getElementById('warning2');
 
     const remaingAmmount =document.getElementById('remaining-ammount');
     const balanceInput = document.getElementById('balance').innerText;
-    remaingAmmount.innerText = parseFloat(balanceInput) - parseFloat(saveAmmountText.innerText);
+    if(isNaN(saveInput) || saveInput < 0 && balanceInput < remaingAmmount){
+        warning1.style.display = 'block'
+        remaingAmmount.innerText = '00';
+        saveAmmountText.innerText = '00';
+        return warning1;
+    }
+    else{
+        remaingAmmount.innerText = parseFloat(balanceInput) - parseFloat(saveAmmount);
+        saveAmmountText.innerText = saveAmmount; 
+        (saveAmmountText.innerText);
+        warning1.style.display = 'none';
+    }
 }
 
 document.getElementById('calculate-btn').addEventListener('click', function(){
