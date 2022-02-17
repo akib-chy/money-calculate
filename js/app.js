@@ -22,8 +22,6 @@ function inputAmmount(){
     if(isNaN(totalInput) || isNaN(foodInput) || isNaN(rentInput) || isNaN(clothInput) || totalInput < 0 || foodInput < 0 || rentInput < 0 || clothInput < 0 || totalInput == "" || foodInput == "" || rentInput == "" || clothInput == ""){
         alert.style.display = 'block';
         balanceWarning.style.display = 'none';
-        totalExpen.innerText = '00';
-        balance .innerText = '00';
         return alert;
     }
     else if(totalInput < totalItem){
@@ -52,13 +50,12 @@ function saveAmmount(){
     const balanceInput = document.getElementById('balance').innerText;
     const savingArelt = document.getElementById('warning4');
     const irrorAmmount = document.getElementById('warning5');
+    const remaingTotal = parseFloat(balanceInput) - parseFloat(saveAmmount);
     // SAVING CONDITION ADD
     if(isNaN(saveInput) || saveInput < 0 && balanceInput < remaingAmmount){
         warning1.style.display = 'block';
         savingArelt.style.display = 'none';
         irrorAmmount.style.display = 'none';
-        remaingAmmount.innerText = '00';
-        saveAmmountText.innerText = '00';
         return warning1;
     }
     else if(saveInput == ""){
@@ -72,12 +69,17 @@ function saveAmmount(){
         warning1.style.display = 'none';
     }
     else{
-        savingArelt.style.display = 'none';
-        irrorAmmount.style.display = 'none';
-        remaingAmmount.innerText = parseFloat(balanceInput) - parseFloat(saveAmmount);
-        saveAmmountText.innerText = saveAmmount; 
-        (saveAmmountText.innerText);
-        warning1.style.display = 'none';
+        if( remaingTotal < 0){
+           return alert('Saving balance should be less stable than income balance');
+        }
+        else{
+
+            savingArelt.style.display = 'none';
+            irrorAmmount.style.display = 'none';
+            remaingAmmount.innerText = remaingTotal;
+            saveAmmountText.innerText = saveAmmount; 
+            warning1.style.display = 'none';
+        }
     }
 }
 // END SAVING FUNCTION
