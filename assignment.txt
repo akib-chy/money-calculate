@@ -1,7 +1,0 @@
-Money master name chaing hoita hobe;
-free pic;
-unisples;
-calculate button a click korle total dhekabe sodo matro expences er gola;
-mainas value dila error masseg dita hobe;
-string dilao error masseg masseg dita hobe;
-saving a ekta error maseeg dita hobe;
