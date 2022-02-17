@@ -7,10 +7,10 @@ function inputAmmount(){
     const clothInput = document.getElementById('cloth-balance').value;
     const totalExpen =  document.getElementById('total-expen');
     const balance = document.getElementById('balance');
-    const balanceWarning = document.getElementById('warning3');
 
     // POPUP WARNING
     const alert = document.getElementById('warning');
+    const balanceWarning = document.getElementById('warning3');
 
     // TOATAL EXPENSES AMMOUNT CALCULATE
     const totalItem = parseFloat(foodInput) + parseFloat(rentInput) + parseFloat(clothInput);
